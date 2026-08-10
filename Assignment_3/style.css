@@ -1,0 +1,250 @@
+/* Reset & Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0b0c10;
+  color: #ffffff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 85vh;
+  /* Replace background image URL with your actual hero background asset */
+  background: linear-gradient(rgba(11, 12, 16, 0.4), rgba(11, 12, 16, 0.7)),
+              url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1600') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 60px;
+}
+
+/* Navbar Flexbox Arrangement */
+.navbar {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  z-index: 10;
+}
+
+.nav-brand .logo-text {
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #c5c6c7;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffffff;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 0.9rem;
+  backdrop-filter: blur(4px);
+  transition: background 0.3s;
+}
+
+.social-icons a:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Hero Main Content */
+.hero-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 40px;
+  z-index: 5;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  margin-bottom: -10px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.title {
+  font-size: 4.5rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: #ffffff;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+  margin-bottom: 0px;
+}
+
+.tagline {
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 35px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+/* Absolute Positioning for Character Overlay */
+.character-wrapper {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  pointer-events: none;
+}
+
+.character-img {
+  width: 380px;
+  height: auto;
+}
+
+/* Mint Button Styling */
+.cta-btn {
+  position: relative;
+  z-index: 7;
+  background-color: #fce38a;
+  color: #111;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 36px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.cta-btn:hover {
+  background-color: #fcd55c;
+  transform: scale(1.05);
+}
+
+/* Curved Hero Bottom Mask */
+.hero-curve {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #0b0c10;
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+  z-index: 2;
+}
+
+/* ================= VISION SECTION ================= */
+.vision-section {
+  position: relative;
+  background-color: #0b0c10;
+  padding: 40px 20px 80px 20px;
+  z-index: 3;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  letter-spacing: 3px;
+  font-weight: 800;
+}
+
+.title-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 300px;
+  margin-top: 10px;
+}
+
+.title-divider .line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+}
+
+.title-divider .diamond {
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Two Column Flex Alignment */
+.vision-grid {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.vision-text {
+  flex: 1;
+  font-size: 0.85rem;
+  color: #a0a5ab;
+  line-height: 1.7;
+  text-align: left;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .title {
+    font-size: 2.8rem;
+  }
+
+  .vision-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
