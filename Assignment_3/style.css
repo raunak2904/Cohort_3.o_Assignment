@@ -1,5 +1,5 @@
-/* Reset & Fonts */
-* {
+*
+{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -13,14 +13,36 @@ body {
   overflow-x: hidden;
 }
 
-/* ================= HERO SECTION ================= */
+.main-wrapper {
+  display: grid;
+  grid-template-areas:
+    "top"
+    "bottom";
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+.top-section {
+  grid-area: top;
+  width: 100%;
+}
+
+.bottom-section {
+  grid-area: bottom;
+  width: 100%;
+}
+
 .hero {
   position: relative;
   width: 100%;
   min-height: 85vh;
-  /* Replace background image URL with your actual hero background asset */
-  background: linear-gradient(rgba(11, 12, 16, 0.4), rgba(11, 12, 16, 0.7)),
-              url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1600') center/cover no-repeat;
+
+  background-image: radial-gradient(circle at center, rgba(11, 12, 16, 0.2) 0%, rgba(11, 12, 16, 0.85) 100%),
+    linear-gradient(to bottom, rgba(11, 12, 16, 0.5) 0%, rgba(11, 12, 16, 0.9) 100%),
+              url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1600');
+   background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  filter: contrast(105%) brightness(95%);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -28,7 +50,7 @@ body {
   padding-bottom: 60px;
 }
 
-/* Navbar Flexbox Arrangement */
+
 .navbar {
   position: relative;
   width: 100%;
@@ -81,7 +103,7 @@ body {
   align-items: center;
   text-decoration: none;
   font-size: 0.9rem;
-  backdrop-filter: blur(4px);
+
   transition: background 0.3s;
 }
 
@@ -89,9 +111,9 @@ body {
   background: rgba(255, 255, 255, 0.25);
 }
 
-/* Hero Main Content */
+
 .hero-content {
-  position: relative;
+  position: relative; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -104,7 +126,7 @@ body {
   font-size: 1.1rem;
   letter-spacing: 1px;
   margin-bottom: -10px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .title {
@@ -120,16 +142,16 @@ body {
   font-size: 1rem;
   letter-spacing: 1.5px;
   margin-bottom: 35px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-/* Absolute Positioning for Character Overlay */
+
 .character-wrapper {
   position: absolute;
   top: -10px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 6;
+
   pointer-events: none;
 }
 
@@ -138,10 +160,11 @@ body {
   height: auto;
 }
 
-/* Mint Button Styling */
+
 .cta-btn {
   position: relative;
-  z-index: 7;
+
+
   background-color: #fce38a;
   color: #111;
   font-weight: 700;
@@ -160,25 +183,12 @@ body {
   transform: scale(1.05);
 }
 
-/* Curved Hero Bottom Mask */
-.hero-curve {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  background: #0b0c10;
-  border-top-left-radius: 50% 100%;
-  border-top-right-radius: 50% 100%;
-  z-index: 2;
-}
 
-/* ================= VISION SECTION ================= */
 .vision-section {
   position: relative;
   background-color: #0b0c10;
   padding: 40px 20px 80px 20px;
-  z-index: 3;
+  
 }
 
 .container {
@@ -210,7 +220,7 @@ body {
 .title-divider .line {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
 }
 
 .title-divider .diamond {
@@ -218,33 +228,45 @@ body {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* Two Column Flex Alignment */
+
 .vision-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "col1 col2";
   gap: 40px;
-  justify-content: center;
+
 }
 
-.vision-text {
-  flex: 1;
+.vision-col-1 {
+  grid-area: col1;
   font-size: 0.85rem;
   color: #a0a5ab;
   line-height: 1.7;
-  text-align: left;
 }
 
-/* Mobile Responsiveness */
+.vision-col-2 {
+  grid-area: col2;
+  font-size: 0.85rem;
+  color: #a0a5ab;
+  line-height: 1.7;
+
+}
+
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
   }
-  
+
   .title {
     font-size: 2.8rem;
   }
 
   .vision-grid {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "col1"
+      "col2";
     gap: 20px;
   }
 }
